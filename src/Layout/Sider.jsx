@@ -1,66 +1,100 @@
+import { useState } from "react";
 import avatar from "../assets/avatars/avatar-01.svg";
 
 function Sider() {
+  const [selectedId, setSelectedId] = useState('home-btn');
+
   return (
     <div
-      className=" bg-[#F3EBE5] m-4 p-4 w-16 flex flex-col items-center rounded-3xl"
+      className=" bg-[#F3EBE5] m-4 p-4 w-16 flex flex-col items-center rounded-2xl"
       style={{ height: "calc(100vh - 2rem)" }}
     >
       <div>
-        <svg
-          className="h-10 w-10"
-          viewBox="0 0 1024 1024"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M690.32 808.58l-51.33-22.68a38.978 38.978 0 0 0-31.68 0.08l-88.44 39.62a38.958 38.958 0 0 1-31.94-0.04l-87.12-39.27a38.961 38.961 0 0 0-32.73 0.33l-41.39 19.67c-25.85 12.28-55.68-6.57-55.68-35.19V427.51C270.01 296.34 376.35 190 507.52 190s237.51 106.34 237.51 237.51v345.43c0 28.16-28.95 47.02-54.71 35.64z"></path>
-          <path
-            d="M374.06 429.62a55.71 73.11 0 1 0 111.42 0 55.71 73.11 0 1 0-111.42 0Z"
-            fill="#FFFFFF"
-          ></path>
-          <path
-            d="M530.77 429.62a55.71 73.11 0 1 0 111.42 0 55.71 73.11 0 1 0-111.42 0Z"
-            fill="#FFFFFF"
-          ></path>
-        </svg>
+        <button id="logo-btn">
+          <svg
+            className="h-10 w-10"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M690.32 808.58l-51.33-22.68a38.978 38.978 0 0 0-31.68 0.08l-88.44 39.62a38.958 38.958 0 0 1-31.94-0.04l-87.12-39.27a38.961 38.961 0 0 0-32.73 0.33l-41.39 19.67c-25.85 12.28-55.68-6.57-55.68-35.19V427.51C270.01 296.34 376.35 190 507.52 190s237.51 106.34 237.51 237.51v345.43c0 28.16-28.95 47.02-54.71 35.64z"></path>
+            <path
+              d="M374.06 429.62a55.71 73.11 0 1 0 111.42 0 55.71 73.11 0 1 0-111.42 0Z"
+              fill="#FFFFFF"
+            ></path>
+            <path
+              d="M530.77 429.62a55.71 73.11 0 1 0 111.42 0 55.71 73.11 0 1 0-111.42 0Z"
+              fill="#FFFFFF"
+            ></path>
+          </svg>
+        </button>
       </div>
 
       <hr className="w-full border-black border-2" />
 
       <ul className="flex flex-col flex-1 items-center justify-center gap-4">
         <li>
-          <button className="btn btn-ghost btn-circle btn-outline bg-[#FBF8F6] border-black border-2">
-            <MaterialSymbolsHomeAppLogo className="h-6 w-6  text-black" />
+          <button 
+            id="home-btn"
+            className={`btn btn-circle btn-outline bg-[#FBF8F6] border-black border-2 ${
+              selectedId === 'home-btn' ? "!bg-black" : ""
+            }`}
+            onClick={() => setSelectedId('home-btn')}
+          >
+            <MaterialSymbolsHomeAppLogo className={`h-6 w-6 ${selectedId === 'home-btn' ? "text-white" : "text-black"}`} />
           </button>
         </li>
         <li>
-          <button className="btn btn-ghost btn-circle btn-outline bg-[#FBF8F6] border-black border-2">
-            <StashDashboard className="h-6 w-6 text-black" />
+          <button 
+            id="dashboard-btn"
+            className={`btn btn-circle btn-outline bg-[#FBF8F6] border-black border-2 ${
+              selectedId === 'dashboard-btn' ? "!bg-black" : ""
+            }`}
+            onClick={() => setSelectedId('dashboard-btn')}
+          >
+            <StashDashboard className={`h-6 w-6 ${selectedId === 'dashboard-btn' ? "text-white" : "text-black"}`} />
           </button>
         </li>
         <li>
-          <button className="btn btn-ghost btn-circle btn-outline bg-[#FBF8F6] border-black border-2">
-            <FluentDataHistogram16Filled className="h-6 w-6 text-black" />
+          <button 
+            id="statistics-btn"
+            className={`btn btn-circle btn-outline bg-[#FBF8F6] border-black border-2 ${
+              selectedId === 'statistics-btn' ? "!bg-black" : ""
+            }`}
+            onClick={() => setSelectedId('statistics-btn')}
+          >
+            <FluentDataHistogram16Filled className={`h-6 w-6 ${selectedId === 'statistics-btn' ? "text-white" : "text-black"}`} />
           </button>
         </li>
         <li>
-          <button className="btn btn-ghost btn-circle btn-outline bg-[#FBF8F6] border-black border-2">
-            <FluentLauncherSettings20Filled className="h-6 w-6 text-black" />
+          <button 
+            id="settings-btn"
+            className={`btn btn-circle btn-outline bg-[#FBF8F6] border-black border-2 ${
+              selectedId === 'settings-btn' ? "!bg-black" : ""
+            }`}
+            onClick={() => setSelectedId('settings-btn')}
+          >
+            <FluentLauncherSettings20Filled className={`h-6 w-6 ${selectedId === 'settings-btn' ? "text-white" : "text-black"}`} />
           </button>
         </li>
         <li>
-          <button className="btn btn-ghost btn-circle btn-outline bg-[#FBF8F6] border-black border-2">
-            <IcOutlineContactSupport className="h-6 w-6 text-black" />
+          <button 
+            id="support-btn"
+            className={`btn btn-circle btn-outline bg-[#FBF8F6] border-black border-2 ${
+              selectedId === 'support-btn' ? "!bg-black" : ""
+            }`}
+            onClick={() => setSelectedId('support-btn')}
+          >
+            <IcOutlineContactSupport className={`h-6 w-6 ${selectedId === 'support-btn' ? "text-white" : "text-black"}`} />
           </button>
         </li>
       </ul>
 
-
       <div>
-        <div className="avatar">
-          <div className="w-10 h-10 rounded-full ring ring-[#FBF8F6] ring-offset-base-100 ring-offset-2">
+        <button id="profile-btn" className="btn btn-circle btn-outline bg-[#FBF8F6] border-black border-2">
+          <div className="w-10 h-10 rounded-full ring ring-[#FBF8F6] ring-offset-base-100 ring-offset-2 bg-[#FBF8F6]">
             <img src={avatar} alt="User avatar" />
           </div>
-        </div>
+        </button>
       </div>
     </div>
   );

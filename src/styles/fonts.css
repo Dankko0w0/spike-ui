@@ -1,0 +1,14 @@
+/* ############### 字体 ############## */
+@font-face {
+  font-family: KrankyRegular;
+  src: url("../assets/fonts/Kranky/Kranky-Regular.ttf");
+}
+@font-face {
+  font-family: EmilysCandyRegular;
+  src: url("../assets/fonts/Emilys_Candy/EmilysCandy-Regular.ttf");
+}
+
+@font-face {
+  font-family: TeXGyreAdventorBold;
+  src: url("../assets/fonts/TeX-Gyre-Adventor/texgyreadventor-bold-4.otf");
+}
