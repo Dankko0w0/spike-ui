@@ -7,12 +7,12 @@ function Layout({ header, sider, content, footer }) {
       </header>
 
       {/* Sider - 仅在 PC 端显示 */}
-      <aside className="hidden md:block min-h-screen">
+      <aside className="hidden md:block min-h-screen fixed left-0 top-0">
         {sider}
       </aside>
 
       {/* Main content */}
-      <main className="flex-1">
+      <main className="flex-1 m-4 ml-24">
           {content}
       </main>
 

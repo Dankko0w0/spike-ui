@@ -6,7 +6,30 @@
 
 html,
 body {
-  width: 100vw;
-  height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
+  /* background-color: #FFFFFF; */
+  background: rgb(247, 200, 220);
+  background: radial-gradient(
+    circle,
+    rgba(247, 200, 220, 1) 0%,
+    rgba(219, 231, 245, 1) 75%
+  );
+}
+
+/* 子元素隐藏滚动条但可滚动 */
+.scrollable {
+  overflow: auto; /* 开启滚动 */
+  max-height: 100vh; /* 限制高度 */
+
+  /* 隐藏滚动条 */
+  -ms-overflow-style: none; /* IE 和 Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none; /* Chrome、Safari 和 Edge 隐藏滚动条 */
 }
